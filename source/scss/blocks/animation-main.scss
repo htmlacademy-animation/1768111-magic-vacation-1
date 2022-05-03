@@ -1,0 +1,23 @@
+.body-loaded {
+  .page-header__logo {
+    left: 0;
+    opacity: 1;
+  }
+
+  .page-header__nav {
+    opacity: 1;
+  }
+
+  .page-header__menu a.active::after {
+    left: 0;
+    width: 100%;
+  }
+
+  .social-block__toggler::before {
+    animation: increaseScale 0.5s ease forwards;
+  }
+
+  .screen__footer {
+    bottom: 0;
+  }
+}
