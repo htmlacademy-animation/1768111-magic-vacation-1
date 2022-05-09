@@ -47,7 +47,7 @@
   background-color: $c-light;
   z-index: 1;
   transition: 0.35s bottom;
-  transition-timing-function: cubic-bezier(0, 0.8, 0, 1);
+  transition-timing-function: $cubicBezier;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;

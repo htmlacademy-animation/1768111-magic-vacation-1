@@ -24,7 +24,9 @@
 .social-block__toggler {
   @include btn-reset;
   position: relative;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 4rem;
   height: 4rem;
   color: $c-dark;
@@ -39,11 +41,15 @@
   }
 
   &::before {
-    @include center;
     content: "";
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     background-color: $c-light;
+    border: 2px solid $c-light;
     z-index: -1;
+    transform: scale(0);
+    transition: 0.35s transform;
   }
 
   svg {
@@ -58,8 +64,7 @@
     color: $c-purple;
 
     &::before {
-      width: 112.5%;
-      height: 112.5%;
+      transform: scale(1.1);
     }
   }
 

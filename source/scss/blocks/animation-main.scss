@@ -14,7 +14,8 @@
   }
 
   .social-block__toggler::before {
-    animation: increaseScale 0.5s cubic-bezier(0, 0.8, 0, 1) forwards;
+    transform: scale(1);
+    transition-timing-function: $cubicBezier;
   }
 
   .screen__footer {

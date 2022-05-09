@@ -38,7 +38,7 @@
   color: $c-light;
   opacity: 0;
   transition: 0.35s left, 0.35s opacity;
-  transition-timing-function: cubic-bezier(0, 0.8, 0, 1);
+  transition-timing-function: $cubicBezier;
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -136,7 +136,7 @@
   align-items: center;
   opacity: 0;
   transition: 0.5s opacity;
-  transition-timing-function: cubic-bezier(0, 0.8, 0, 1);
+  transition-timing-function: $cubicBezier;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
@@ -279,7 +279,7 @@
         display: block;
         background-color: $c-light;
         transition: 0.6s width;
-        transition-timing-function: cubic-bezier(0, 0.8, 0, 1);
+        transition-timing-function: $cubicBezier;
       }
     }
 
