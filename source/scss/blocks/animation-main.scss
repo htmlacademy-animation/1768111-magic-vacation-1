@@ -1,0 +1,24 @@
+.body-loaded {
+  .page-header__logo {
+    left: 0;
+    opacity: 1;
+  }
+
+  .page-header__nav {
+    opacity: 1;
+  }
+
+  .page-header__menu a.active::after {
+    left: 0;
+    width: 100%;
+  }
+
+  .social-block__toggler::before {
+    transform: scale(1);
+    transition-timing-function: $cubicBezier;
+  }
+
+  .screen__footer {
+    bottom: 0;
+  }
+}
