@@ -301,6 +301,19 @@
     background-size: auto calc(100vh - 13.8rem), 100% 25rem;
     background-position: top center, bottom center;
   }
+
+  &:not(.active) {
+    .screen__background {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      top: 100%;
+      background-color: $c-dark;
+      animation: riseUp 1s ease forwards;
+      z-index: 1;
+    }
+  }
 }
 
 .screen--prizes {

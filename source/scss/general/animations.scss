@@ -33,3 +33,12 @@
     transform: scaleX(100%);
   }
 }
+
+@keyframes riseUp  {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 0;
+  }
+}
