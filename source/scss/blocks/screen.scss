@@ -356,3 +356,17 @@
 .screen--rules {
   background-color: $c-dark;
 }
+
+.screen__background {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 100%;
+  background-color: $c-dark;
+  z-index: 1;
+
+  &--active {
+    animation: riseUp 0.35s ease forwards;
+  }
+}
