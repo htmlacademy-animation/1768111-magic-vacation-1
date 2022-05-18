@@ -1,0 +1,18 @@
+.text__word {
+  display: inline-block;
+  margin: 0 5px;
+  overflow: hidden;
+
+  @media (max-width: $tablet) and (orientation: portrait) {
+    margin: 0;
+  }
+}
+
+.text__word > span {
+  display: inline-block;
+  transform: translate3d(0, 1em, 0);
+}
+
+.text-animation .text__word > span {
+  transform: translate3d(0, 0, 0);
+}
