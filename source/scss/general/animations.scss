@@ -42,3 +42,40 @@
     top: 0;
   }
 }
+
+@keyframes riseDown  {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes drawStroke  {
+  0% {
+    stroke-dasharray: 0 0 0;
+  }
+  100% {
+    stroke-dasharray: 500 1000 0;
+  }
+}
+
+@keyframes showButton  {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: $c-dark;
+  }
+}
+
+@keyframes showButtonPseudo  {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: $c-light;
+    border-color: $c-light;
+  }
+}

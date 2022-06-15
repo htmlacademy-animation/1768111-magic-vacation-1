@@ -20,6 +20,28 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     padding: 3rem 0;
   }
+
+  .form__button {
+    color: transparent;
+    animation: showButton 0.5s ease forwards 0.6s;
+    &::before {
+      background: none;
+      border: 2px solid transparent;
+      animation: showButtonPseudo 0.35s ease forwards 0.3s;
+    }
+  }
+
+  .form__field {
+    &::placeholder {
+      color: transparent;
+      transition: 1s all;
+    }
+    &_colored {
+      &::placeholder {
+        color: $c-dark;
+      }
+    }
+  }
 }
 
 .result__image {
@@ -57,6 +79,9 @@
 .result__title {
   margin: 0 auto 2rem;
   color: $c-light;
+  transform: scale(1.5);
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards, riseDown 0.6s ease forwards;
 
   @media (min-width: $stop-scaling) {
     margin: 0 auto 20px;
@@ -72,6 +97,11 @@
     height: 100%;
     stroke-width: 0.2rem;
     stroke-linejoin: round;
+
+    path {
+      stroke-dasharray: 0 1000 0;
+      animation: drawStroke 1s cubic-bezier(0.05, 0.46, 0.66, 0.83) forwards;
+    }
   }
 }
 
@@ -83,6 +113,9 @@
   font-size: 4.8rem;
   line-height: 0.906;
   letter-spacing: -0.01em;
+  transform: scale(1.5);
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards, riseDown 0.6s ease forwards;
 
   @media (min-width: $stop-scaling) {
     margin-bottom: 20px;

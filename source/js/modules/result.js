@@ -14,6 +14,10 @@ export default () => {
         });
         targetEl[0].classList.add(`screen--show`);
         targetEl[0].classList.remove(`screen--hidden`);
+        setTimeout(()=> {
+          document.querySelectorAll(`.form__field`).forEach((el) => el.classList.remove(`form__field_colored`));
+          document.querySelectorAll(`.form__field`).forEach((el) => el.classList.add(`form__field_colored`));
+        }, 750);
       });
     }
 
