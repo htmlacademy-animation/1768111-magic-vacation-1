@@ -44,7 +44,8 @@
   border-radius: 3rem;
   outline: none;
   transform-origin: right;
-  animation: slideLeft 0.5s ease forwards;
+  transform: scaleX(0);
+  animation: slideLeft 0.5s ease forwards 0.5s;
 
   &:focus {
     border: 1px solid $c-purple;

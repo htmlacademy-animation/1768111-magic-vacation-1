@@ -20,6 +20,28 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     padding: 3rem 0;
   }
+
+  .form__button {
+    color: transparent;
+    animation: showButton 0.5s ease forwards 0.6s;
+    &::before {
+      background: none;
+      border: 2px solid transparent;
+      animation: showButtonPseudo 0.35s ease forwards 0.3s;
+    }
+  }
+
+  .form__field {
+    &::placeholder {
+      color: transparent;
+      transition: 1s all;
+    }
+    &_colored {
+      &::placeholder {
+        color: $c-dark;
+      }
+    }
+  }
 }
 
 .result__image {
@@ -39,24 +61,96 @@
     right: -1rem;
   }
 
-  picture {
-    display: block;
-    width: 100%;
-    height: 100%;
+  img {
+    will-change: transform;
+    position: absolute;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+  &-1 {
+    bottom: 11rem;
+    left: 53rem;
+    width: 20rem;
+    animation: fadeIn 1s forwards, resultImageAnimation-1 0.6s forwards, shaking 5s infinite 1.5s;
+
+
+    @media (max-width: $mobile) {
+      width: 15rem;
+      left: auto;
+    }
+  }
+
+  &-2 {
+    bottom: 20rem;
+    left: 74rem;
+    width: 20rem;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s, resultImageAnimation-2 4s forwards 0.5s;
+    transform-origin: bottom left;
+    z-index: -1;
+
+    @media (max-width: $mobile) {
+      left: 20rem;
+      bottom: 15rem;
+      width: 15rem;
+    }
+  }
+
+  &-3 {
+    bottom: 15rem;
+    left: 48rem;
+    width: 20rem;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s, resultImageAnimation-2 4s forwards 0.4s;
+    transform-origin: bottom right;
+    z-index: -1;
+
+
+    @media (max-width: $mobile) {
+      left: auto;
+      right: 18rem;
+      bottom: 15rem;
+      width: 15rem;
+    }
+  }
+
+  &-4 {
+    bottom: 18rem;
+    left: 73rem;
+    width: 30rem;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s, resultImageAnimation-2 4s forwards 0.3s;
+    transform-origin: bottom left;
+    z-index: -1;
+
+    @media (max-width: $mobile) {
+      left: 15rem;
+      bottom: 15rem;
+      width: 20rem;
+    }
+  }
+
+  &-5 {
+    bottom: 11rem;
+    left: 55rem;
+    width: 30rem;
+    animation: fadeIn 1s forwards, resultImageAnimation-3 0.6s forwards;
+    z-index: -1;
+
+
+    @media (max-width: $mobile) {
+      width: 25rem;
+      left: auto;
+    }
   }
 }
 
 .result__title {
   margin: 0 auto 2rem;
   color: $c-light;
+  transform: scale(1.5);
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards, riseDown 0.6s ease forwards;
 
   @media (min-width: $stop-scaling) {
     margin: 0 auto 20px;
@@ -72,6 +166,11 @@
     height: 100%;
     stroke-width: 0.2rem;
     stroke-linejoin: round;
+
+    path {
+      stroke-dasharray: 0 1000 0;
+      animation: drawStroke 1s cubic-bezier(0.05, 0.46, 0.66, 0.83) forwards;
+    }
   }
 }
 
@@ -83,6 +182,9 @@
   font-size: 4.8rem;
   line-height: 0.906;
   letter-spacing: -0.01em;
+  transform: scale(1.5);
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards, riseDown 0.6s ease forwards;
 
   @media (min-width: $stop-scaling) {
     margin-bottom: 20px;

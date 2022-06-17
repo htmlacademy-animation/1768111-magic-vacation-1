@@ -42,3 +42,100 @@
     top: 0;
   }
 }
+
+@keyframes riseDown  {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes drawStroke  {
+  0% {
+    stroke-dasharray: 0 0 0;
+  }
+  100% {
+    stroke-dasharray: 500 1000 0;
+  }
+}
+
+@keyframes showButton  {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: $c-dark;
+  }
+}
+
+@keyframes showButtonPseudo  {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: $c-light;
+    border-color: $c-light;
+  }
+}
+
+@keyframes shaking {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-10deg);
+  }
+  50% {
+    transform: translate3d(5px, -20px, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-10deg);
+  }
+}
+
+@keyframes resultImageAnimation-1 {
+  0% {
+    transform: translate3d(0, 150px, 0) rotate(320deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(350deg);
+  }
+}
+
+@keyframes resultImageAnimation-2 {
+  10% {
+    transform: rotate(-10deg);
+  }
+  30% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+  70% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-3deg);
+  }
+  90% {
+    transform: rotate(2deg);
+  }
+  95% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes resultImageAnimation-3 {
+  0% {
+    transform: translate3d(0, 300px, 0) scale(0);
+  }
+  75% {
+    transform: translate3d(0, -20px, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
