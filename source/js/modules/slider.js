@@ -3,6 +3,8 @@ import Swiper from "swiper";
 export default () => {
   let storySlider;
   let sliderContainer = document.getElementById(`story`);
+  let header = document.querySelector(`.page-header`);
+  header.classList.add(`page-header--style-1`);
   sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
 
   const setSlider = function () {
@@ -52,12 +54,24 @@ export default () => {
         on: {
           slideChange: () => {
             if (storySlider.activeIndex === 0) {
+              header.classList.add(`page-header--style-1`);
+              header.classList.remove(`page-header--style-2`);
+              header.classList.remove(`page-header--style-3`);
               sliderContainer.style.backgroundImage = `url("img/slide1.jpg")`;
             } else if (storySlider.activeIndex === 2) {
+              header.classList.remove(`page-header--style-1`);
+              header.classList.add(`page-header--style-2`);
+              header.classList.remove(`page-header--style-3`);
               sliderContainer.style.backgroundImage = `url("img/slide2.jpg")`;
             } else if (storySlider.activeIndex === 4) {
+              header.classList.remove(`page-header--style-1`);
+              header.classList.remove(`page-header--style-2`);
+              header.classList.add(`page-header--style-3`);
               sliderContainer.style.backgroundImage = `url("img/slide3.jpg")`;
             } else if (storySlider.activeIndex === 6) {
+              header.classList.add(`page-header--style-1`);
+              header.classList.remove(`page-header--style-2`);
+              header.classList.remove(`page-header--style-3`);
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg")`;
             }
           },

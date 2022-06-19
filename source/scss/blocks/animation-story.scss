@@ -1,0 +1,13 @@
+.screen--story.active {
+  .slider__pagination.swiper-pagination, .slider__controls {
+    opacity: 1;
+  }
+
+  .slider__control--next {
+    transform: translateX(0px) rotate(0deg);
+  }
+
+  .slider__control--prev {
+    transform: translateX(0px) rotate(360deg);
+  }
+}

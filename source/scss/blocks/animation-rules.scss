@@ -27,4 +27,10 @@
     animation: slideLeft 0.5s ease 1s forwards;
     color: rgba(95, 69, 140, 1);
   }
+
+  .screen__disclaimer {
+    ul {
+      opacity: 1;
+    }
+  }
 }
