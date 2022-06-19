@@ -316,3 +316,130 @@
     width: 100%;
   }
 }
+
+.page-header {
+  &--style-1 {
+    a {
+      &:hover {
+        color: $c-purple;
+
+        &::after {
+          background-color: $c-purple;
+        }
+      }
+    }
+
+    .social-block__toggler {
+      svg {
+        color: $c-purple;
+      }
+      &:hover {
+        svg {
+          color: $c-dark;
+        }
+      }
+      &:focus {
+        border: 2px solid $c-dark;
+        svg {
+          color: $c-dark;
+        }
+        &::before {
+          border: none;
+        }
+      }
+      &:active {
+        border: none;
+        background-color: $c-dark;
+        svg {
+          color: $c-light;
+        }
+      }
+    }
+  }
+  &--style-2 {
+    a {
+      &:hover {
+        opacity: 0.7;
+        color: $c-blue;
+
+        &::after {
+          opacity: 0.7;
+          background-color: $c-blue;
+        }
+      }
+    }
+
+    .social-block__toggler {
+      svg {
+        color: $c-darkblue;
+      }
+      &:hover {
+        svg {
+          color: $c-blue;
+        }
+      }
+      &:focus {
+        border: 2px solid $c-blue;
+        svg {
+          color: $c-blue;
+        }
+        &::before {
+          border: none;
+        }
+      }
+      &:active {
+        border: none;
+        background-color: $c-blue;
+        svg {
+          color: $c-light;
+        }
+        &::before {
+          background-color: $c-blue;
+          border-color: $c-blue;
+        }
+      }
+    }
+  }
+  &--style-3 {
+    a {
+      &:hover {
+        color: $c-darkblue;
+
+        &::after {
+          background-color: $c-darkblue;
+        }
+      }
+    }
+
+    .social-block__toggler {
+      svg {
+        color: $c-blue;
+      }
+      &:hover {
+        svg {
+          color: $c-darkblue;
+        }
+      }
+      &:focus {
+        border: 2px solid $c-darkblue;
+        svg {
+          color: $c-darkblue;
+        }
+        &::before {
+          border: none;
+        }
+      }
+      &:active {
+        border: none;
+        background-color: $c-darkblue;
+        svg {
+          color: $c-light;
+        }
+        &::before {
+          background-color: $c-darkblue;
+          border-color: $c-darkblue;
+        }
+      }
+    }
+  }
+}

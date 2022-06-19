@@ -139,3 +139,12 @@
     transform: translate3d(0, 0, 0);
   }
 }
+
+@keyframes resultNegativeButton {
+  0% {
+    transform: translateX(100px) rotate(180deg);
+  }
+  100% {
+    transform: translateX(0px) rotate(0deg);
+  }
+}
