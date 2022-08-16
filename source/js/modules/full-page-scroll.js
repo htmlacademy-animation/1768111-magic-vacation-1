@@ -1,4 +1,5 @@
 import throttle from 'lodash/throttle';
+import prizes from './prizes.js';
 
 export default class FullPageScroll {
   constructor() {
@@ -13,6 +14,8 @@ export default class FullPageScroll {
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
+
+    this.isSVGAnimationAdded = false;
   }
 
   init() {
@@ -42,6 +45,10 @@ export default class FullPageScroll {
 
   onUrlHashChanged() {
     const newIndex = Array.from(this.screenElements).findIndex((screen) => location.hash.slice(1) === screen.id);
+    if (newIndex === 2 && !this.isSVGAnimationAdded) {
+      prizes();
+      this.isSVGAnimationAdded = true;
+    }
     if (newIndex === 2 && this.activeScreen === 1) {
       this.screenBackground.classList.add(`screen__background--active`);
       setTimeout(() => {
