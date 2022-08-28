@@ -3,7 +3,12 @@ export default () => {
   let results = document.querySelectorAll(`.screen--result`);
   if (results.length) {
     for (let i = 0; i < showResultEls.length; i++) {
+      const title = results[i].querySelector(`.result__title`);
       showResultEls[i].addEventListener(`click`, function () {
+        const titleSVG = title.querySelector(`.result__title-svg`);
+        const clone = titleSVG.cloneNode(true);
+        titleSVG.remove();
+        title.appendChild(clone);
         let target = showResultEls[i].getAttribute(`data-target`);
         [].slice.call(results).forEach(function (el) {
           el.classList.remove(`screen--show`);
