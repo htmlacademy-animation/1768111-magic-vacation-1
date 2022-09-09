@@ -1,5 +1,6 @@
 import throttle from 'lodash/throttle';
 import prizes from './prizes.js';
+import game from './game.js';
 
 export default class FullPageScroll {
   constructor() {
@@ -76,6 +77,7 @@ export default class FullPageScroll {
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
     setTimeout(() => {
       this.screenElements[this.activeScreen].classList.add(`active`);
+      game();
     }, 100);
   }
 
