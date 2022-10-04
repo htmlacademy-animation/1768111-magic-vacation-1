@@ -127,6 +127,9 @@
   }
 
   &--journeys {
+    transform: translateX(39rem);
+    animation: translateXZero 1s ease-in-out 3.3s forwards;
+
     .prizes__icon {
       position: relative;
       left: -5.9rem;
@@ -287,6 +290,9 @@
     align-items: flex-end;
     margin-left: 1.4rem;
     max-width: 14rem;
+    transform: translateX(2rem);
+    transition: transform 0.5s ease-in-out 0.4s, opacity 0.2s ease-in-out 0.5s;
+    opacity: 0;
 
     @media (min-width: $stop-scaling) {
       margin-left: 14px;
@@ -325,6 +331,13 @@
     @media (max-width: $mobile) and (orientation: landscape) {
       width: 0.5rem;
       height: 0.5rem;
+    }
+  }
+
+  &--visible {
+    span {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 }

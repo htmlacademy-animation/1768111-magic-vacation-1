@@ -1,11 +1,11 @@
-import getRandomInt from '../helpers';
+import {getRandomInt} from '../helpers';
 
 export default class AccentTypographyBuild {
   constructor(
-    elementSelector,
-    timer,
-    classForActivate,
-    property
+      elementSelector,
+      timer,
+      classForActivate,
+      property
   ) {
     this._TIME_SPACE = 100;
 
@@ -33,7 +33,7 @@ export default class AccentTypographyBuild {
     if (!this._element) {
       return;
     }
-    const text = this._element.textContent.trim().split(` `).filter((latter)=>latter !== '');
+    const text = this._element.textContent.trim().split(` `).filter((latter)=>latter !== ``);
 
     const content = text.reduce((fragmentParent, word) => {
       const wordElement = Array.from(word).reduce((fragment, latter) => {

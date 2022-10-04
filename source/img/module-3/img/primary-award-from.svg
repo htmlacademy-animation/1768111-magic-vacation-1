@@ -1,4 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 350 330">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 350 330" opacity="0">
+  <animate attributeName="opacity"
+    from="0"
+    to="1"
+    dur="0.3s"
+    repeatCount="1"
+    begin="0s"
+    fill="freeze"
+  />
+
   <g id="airship">
     <g id="airship-body" opacity="1">
       <animate attributeName="opacity"
