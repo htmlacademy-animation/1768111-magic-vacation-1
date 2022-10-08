@@ -2,16 +2,17 @@ import {getSeveralRandomInts, fixedFpsFrame} from '../helpers';
 
 export default () => {
   const prizes = document.querySelector(`.prizes`);
+  const prizesItem = prizes.querySelectorAll(`.prizes__item`);
   const prizesIcon = prizes.querySelectorAll(`.prizes__icon`);
   const prizesDescription = prizes.querySelectorAll(`.prizes__desc`);
   const prizesNumbers = prizes.querySelectorAll(`.prizes__desc b`);
   const prizesIconJourneys = prizes.querySelector(`.prizes__item--journeys`);
   const fps = 12;
-  let currentNumbers = [1, 1, 1];
+  let currentRound = [1, 1, 1];
 
   const drawNumber = (index, numbers, currentNumber) => {
     prizesNumbers[index].textContent = numbers[currentNumber];
-    currentNumbers[index]++;
+    currentRound[index]++;
   };
 
   prizesIcon.forEach((el, index)=> {
@@ -44,41 +45,43 @@ export default () => {
       <picture>
         <source srcset="img/module-3/img/${picture}-award-from.svg" media="(orientation: portrait)">
         <img src="img/module-3/img/${picture}-award-from.svg" alt="">
-      </picture>`;
+        </picture>`;
 
-    if (index === 2) {
-      prizesIconJourneys.addEventListener(`animationend`, () => {
-        setTimeout(() => {
+    switch (index) {
+      case 0:
+        el.innerHTML = iconTemplate;
+        setTimeout(()=>{
+          prizesNumbers[index].classList.remove(`opacity-hidden`);
+          prizesDescription[index].classList.add(`prizes__desc--visible`);
+          prizesNumbers[index].textContent = numbers[index];
+        }, 1500);
+        break;
+      case 1:
+        prizesIconJourneys.addEventListener(`animationend`, () => {
+          prizesItem[index - 1].classList.add(`prizes__item--journeys--stop-animation`);
           el.innerHTML = iconTemplate;
           prizesDescription[index].classList.add(`prizes__desc--visible`);
 
-          fixedFpsFrame(fps, ()=>{
-            drawNumber(index, numbers, currentNumbers[index]);
-          }
-          , numbers.length);
-        }, 3500);
-      });
-    }
+          fixedFpsFrame(fps,
+              ()=> {
+                drawNumber(index, numbers, currentRound[index]);
+              }
+              , numbers.length);
+        });
+        break;
+      case 2:
+        prizesIconJourneys.addEventListener(`animationend`, () => {
+          setTimeout(() => {
+            el.innerHTML = iconTemplate;
+            prizesDescription[index].classList.add(`prizes__desc--visible`);
 
-    if (index === 1) {
-      prizesIconJourneys.addEventListener(`animationend`, () => {
-        el.innerHTML = iconTemplate;
-        prizesDescription[index].classList.add(`prizes__desc--visible`);
-
-        fixedFpsFrame(fps,
-            ()=> {
-              drawNumber(index, numbers, currentNumbers[index]);
+            fixedFpsFrame(fps, ()=>{
+              drawNumber(index, numbers, currentRound[index]);
             }
             , numbers.length);
-      });
-    }
-
-    if (index === 0) {
-      el.innerHTML = iconTemplate;
-      setTimeout(()=>{
-        prizesDescription[index].classList.add(`prizes__desc--visible`);
-        prizesNumbers[index].textContent = numbers[index];
-      }, 1500);
+          }, 3500);
+        });
+        break;
     }
   });
 };
