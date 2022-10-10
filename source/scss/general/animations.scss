@@ -148,3 +148,9 @@
     transform: translateX(0px) rotate(0deg);
   }
 }
+
+@keyframes translateXZero {
+  100% {
+    transform: translateX(0);
+  }
+}
